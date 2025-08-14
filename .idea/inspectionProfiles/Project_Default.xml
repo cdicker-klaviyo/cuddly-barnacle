@@ -1,0 +1,57 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="Eslint" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="43">
+            <item index="0" class="java.lang.String" itemvalue="kdomains" />
+            <item index="1" class="java.lang.String" itemvalue="content-generation-client" />
+            <item index="2" class="java.lang.String" itemvalue="llm-context" />
+            <item index="3" class="java.lang.String" itemvalue="email-ai-v2" />
+            <item index="4" class="java.lang.String" itemvalue="kexceptions" />
+            <item index="5" class="java.lang.String" itemvalue="grpc-client" />
+            <item index="6" class="java.lang.String" itemvalue="ktrace" />
+            <item index="7" class="java.lang.String" itemvalue="backports-functools-lru-cache" />
+            <item index="8" class="java.lang.String" itemvalue="chat" />
+            <item index="9" class="java.lang.String" itemvalue="encoded-objects" />
+            <item index="10" class="java.lang.String" itemvalue="backports-cached-property" />
+            <item index="11" class="java.lang.String" itemvalue="kstatsd" />
+            <item index="12" class="java.lang.String" itemvalue="chariot-messaging" />
+            <item index="13" class="java.lang.String" itemvalue="klaviyo-custom-objects-client" />
+            <item index="14" class="java.lang.String" itemvalue="billing-usage-core" />
+            <item index="15" class="java.lang.String" itemvalue="api-analytics-client" />
+            <item index="16" class="java.lang.String" itemvalue="asyncio-util" />
+            <item index="17" class="java.lang.String" itemvalue="kms-config" />
+            <item index="18" class="java.lang.String" itemvalue="data-exchange-sync-common" />
+            <item index="19" class="java.lang.String" itemvalue="kconversions" />
+            <item index="20" class="java.lang.String" itemvalue="datatype-utils" />
+            <item index="21" class="java.lang.String" itemvalue="event-log-service" />
+            <item index="22" class="java.lang.String" itemvalue="klaviyo-schemas" />
+            <item index="23" class="java.lang.String" itemvalue="klaviyo-ucp" />
+            <item index="24" class="java.lang.String" itemvalue="client-identity-schema" />
+            <item index="25" class="java.lang.String" itemvalue="custom-monitors" />
+            <item index="26" class="java.lang.String" itemvalue="klaviyo-billing-usage-client" />
+            <item index="27" class="java.lang.String" itemvalue="billing-usage-credit-calculator" />
+            <item index="28" class="java.lang.String" itemvalue="billing-usage-overage-passthrough" />
+            <item index="29" class="java.lang.String" itemvalue="products-and-entitlements-configurations" />
+            <item index="30" class="java.lang.String" itemvalue="ksmschannelprovider-countryservice" />
+            <item index="31" class="java.lang.String" itemvalue="knotary" />
+            <item index="32" class="java.lang.String" itemvalue="integrations-framework" />
+            <item index="33" class="java.lang.String" itemvalue="kzit" />
+            <item index="34" class="java.lang.String" itemvalue="klaviyo-custom-objects" />
+            <item index="35" class="java.lang.String" itemvalue="klaviyo-cachetools" />
+            <item index="36" class="java.lang.String" itemvalue="api-client" />
+            <item index="37" class="java.lang.String" itemvalue="events-schema" />
+            <item index="38" class="java.lang.String" itemvalue="event-ingest-service" />
+            <item index="39" class="java.lang.String" itemvalue="prep-publisher-client" />
+            <item index="40" class="java.lang.String" itemvalue="mobile-vendors-management" />
+            <item index="41" class="java.lang.String" itemvalue="klaviyo-top-accounts" />
+            <item index="42" class="java.lang.String" itemvalue="encoded-objects-core" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
