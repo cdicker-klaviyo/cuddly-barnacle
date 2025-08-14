@@ -6,61 +6,13 @@
 
 </head>
 
-
-
 <body>
-    <label for="company_id">Company ID:</label>
-    <input type="text" id="company_id" name="company_id">
-    <button onclick="loadKlaviyoScript()">Load Form</button>
-    <button onclick="clearCookies()">Clear Cookies</button>
-
-    <script>
-        function loadKlaviyoScript() {
-            const companyId = document.getElementById('company_id').value;
-            
-            if (!companyId) {
-                alert('Please enter a Company ID');
-                return;
-            }
-            
-            // Remove any existing Klaviyo script
-            const existingScript = document.querySelector('script[src*="klaviyo.js"]');
-            if (existingScript) {
-                existingScript.remove();
-            }
-            
-            // Create and load new script with the entered company_id
-            const script = document.createElement('script');
-            script.async = true;
-            script.type = 'text/javascript';
-            script.src = `https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=${companyId}`;
-            document.head.appendChild(script);
-            
-            console.log(`Klaviyo script loaded with company_id: ${companyId}`);
-        }
-        
-        function clearCookies() {
-            // Get all cookies
-            const cookies = document.cookie.split(";");
-            
-            // Clear each cookie
-            for (let cookie of cookies) {
-                const eqPos = cookie.indexOf("=");
-                const name = eqPos > -1 ? cookie.substr(0, eqPos).trim() : cookie.trim();
-                
-                // Delete the cookie by setting it to expire in the past
-                document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/`;
-                document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=${window.location.hostname}`;
-                document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=.${window.location.hostname}`;
-            }
-            
-            // Also clear localStorage and sessionStorage if needed
-            localStorage.clear();
-            sessionStorage.clear();
-            
-            console.log('All cookies and storage cleared');
-            alert('Cookies and storage cleared successfully!');
-        }
-    </script>
+    <h1>Forms Viewer</h1>
+    <nav>
+        <ul>
+            <li><a href="generic.html">Generic</a></li>
+            <li><a href="gunsbaby.html">Guns Baby</a></li>
+            <li><a href="sexythings.html">Sexy Things</a></li>
+        </ul>
+    </nav>
 </body>
-</html>
