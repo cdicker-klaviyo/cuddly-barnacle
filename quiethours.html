@@ -15,8 +15,21 @@
         <a href="index.html">← Back to Home</a>
     </nav>
     <h1>Quiet Hours Test</h1>
-    <p>Fill out the form and follow the instructions on your phone screen. You must complete all steps before filling out the form to re-enter the flow again. Click the "Reset Form" button in order to clear the cookies and refresh the page.</p>
-    <button onclick="clearCookies()">Reset Form</button>
+
+    <ol>
+        <li>Subscribe your number to SMS messaging using the onsite form <button onclick="openForm()">Open Form</button>. You can find the teaser in the bottom left. You should be able to fill out the form as many times as you want, but if you don't see it show up, try resetting the form (clearing the cookies and refreshing the page). <button onclick="clearCookies()">Reset Form</button></li>
+        <li>
+            <div>
+                <label for="testInput">Enter phone number:</label>
+                <input type="text" id="testInput" placeholder="+1234567890" />
+                <button onclick="beginTest()">Begin Test</button>
+            </div>
+        </li>
+        <li>You should receive a text message in a few minutes.</li>
+        <li>Continue following the instructions on your phone.</li>
+    </ol>
+
+    <p>Notes: You can repeat the test with the same number (ignoring step 1 on subsequent runs), but you need to wait until the first test has fully completed before beginning a subsequent test. You will have ~30 minutes after beginning a test to specify a time. You should begin this process at least 30 minutes before the time you wish to receive the test message.</p>
 
     <script>
         function clearCookies() {
@@ -40,6 +53,72 @@
             
             console.log('All cookies and storage cleared');
             window.location.reload();
+        }
+
+        function openForm() {
+            window._klOnsite = window._klOnsite || []; 
+            window._klOnsite.push(['openForm', 'T4Ttmr']);
+        }
+
+        // Begin the test: validate phone input then send event POST
+        function beginTest() {
+
+            const inputElement = document.getElementById('testInput');
+            const value = inputElement ? inputElement.value.trim() : '';
+
+            // Validate: must start with '+' followed by exactly 11 digits
+            const phoneRegex = /^\+\d{11}$/;
+            if (!phoneRegex.test(value)) {
+                alert('Please enter a phone number in the format +12345678901 (plus sign followed by 11 digits).');
+                return; // don't send the POST request
+            }
+
+            const requestBody = {
+                data: {
+                    type: "event",
+                    attributes: {
+                        properties: {
+                            Brand: "Kids Book",
+                            ProductID: 1111,
+                            ProductName: "The Communist Manifesto"
+                        },
+                        metric: {
+                            data: {
+                                type: "metric",
+                                attributes: {
+                                    name: "Viewed Product",
+                                    service: "string"
+                                }
+                            }
+                        },
+                        profile: {
+                            data: {
+                                type: "profile",
+                                attributes: {
+                                    phone_number: value
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+
+            const options = {
+                method: 'POST',
+                headers: {
+                    accept: 'application/vnd.api+json',
+                    revision: '2025-10-15',
+                    'content-type': 'application/vnd.api+json',
+                    Authorization: 'Klaviyo-API-Key pk_fa174d2784507aef6bf6c16c3e780baceb'
+                },
+                body: JSON.stringify(requestBody)
+            };
+
+            fetch('https://a.klaviyo.com/api/events', options)
+                .then(res => res.json())
+                .then(res => console.log(res))
+                .catch(err => console.error(err));
+
         }
     </script>
 </body>
