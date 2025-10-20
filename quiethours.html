@@ -73,6 +73,9 @@
                 return; // don't send the POST request
             }
 
+            const params = new URLSearchParams();
+            params.append('company_id', 'VNvqRc');
+
             const requestBody = {
                 data: {
                     type: "event",
@@ -113,7 +116,7 @@
                 body: JSON.stringify(requestBody)
             };
 
-            fetch('https://a.klaviyo.com/client/events', options)
+            fetch(`https://a.klaviyo.com/client/events?${params.toString()}`, options)
                 .then(res => res.json())
                 .then(res => {
                     console.log("Success: ", res)
