@@ -109,15 +109,20 @@
                     accept: 'application/vnd.api+json',
                     revision: '2025-10-15',
                     'content-type': 'application/vnd.api+json',
-                    Authorization: 'Klaviyo-API-Key pk_fa174d2784507aef6bf6c16c3e780baceb'
                 },
                 body: JSON.stringify(requestBody)
             };
 
-            fetch('https://a.klaviyo.com/api/events', options)
+            fetch('https://a.klaviyo.com/client/events', options)
                 .then(res => res.json())
-                .then(res => console.log(res))
-                .catch(err => console.error(err));
+                .then(res => {
+                    console.log("Success: ", res)
+                    alert("Event sent successfully! Please check your phone for the next steps: " + res)
+                })
+                .catch(err => {
+                    console.error("Error: ", err)
+                    alert("There was an error sending the event. Please try again later: " + err);
+                });
 
         }
     </script>
