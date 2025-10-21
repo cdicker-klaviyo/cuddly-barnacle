@@ -22,10 +22,27 @@ body{
 }
 
 .page{
-  max-width:var(--maxwidth);
-  margin:28px auto;
-  background:transparent;
-  padding:20px;
+  display: flex;
+  gap: 32px;
+  max-width: calc(var(--maxwidth) + 200px);
+  margin: 28px auto;
+  background: transparent;
+  padding: 20px;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.logo-left{
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  position: sticky;
+  top: 28px;
 }
 
 h1{font-size:1.6rem;margin:0 0 12px}
@@ -73,4 +90,15 @@ input[type="text"]:focus, textarea:focus{box-shadow:0 0 0 3px rgba(37,99,235,0.0
 footer{margin-top:32px;color:var(--muted);font-size:0.9rem}
 
 /* small responsive tweaks */
-@media (max-width:600px){.page{margin:12px;padding:12px}}
+@media (max-width: 768px) {
+  .page {
+    flex-direction: column;
+    align-items: center;
+    margin: 12px;
+    padding: 12px;
+  }
+  .logo-left {
+    position: static;
+    margin-bottom: 20px;
+  }
+}
