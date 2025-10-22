@@ -89,6 +89,10 @@ input[type="text"]:focus, textarea:focus{box-shadow:0 0 0 3px rgba(37,99,235,0.0
 
 footer{margin-top:32px;color:var(--muted);font-size:0.9rem}
 
+.gale-offset {
+  object-position: center -40px;
+}
+
 /* small responsive tweaks */
 @media (max-width: 768px) {
   .page {
